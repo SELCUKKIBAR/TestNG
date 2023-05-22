@@ -1,0 +1,28 @@
+
+
+<!-- TestNg ile toplu dosya calistirmak icin xml uxantılı dosyalar kullaniriz.
+     xml dosyalari Html kodlarina benzer sekilde yazilan xml kodlarindan olusur
+     Toplu calistirma icin ihtiyacımız olan xml kodlari TestNg.org sayfasinda bulunur.
+     Tğm testNG xml dosyalari su satir ile baslamadir.
+     <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+     sonrasinda calistiracagimiz testlere göre hiyerarsik olarak xml dosyasinda
+     belirleyebiliriz....-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Istenen claslari calistirma">
+
+  <test name="smokeTest">
+
+      <classes>
+
+          <class name="tests.Selcuk_Day_15_POM.C05_qd_login_dinamik"></class>
+          <class name="tests.Selcuk_Day_15_POM.C06_qd_negatifLogin_dinamik"></class>
+          <class name="tests.Selcuk_Day_16_POM_Assertions.C03_Softassertion"></class>
+
+      </classes>
+
+  </test>
+
+</suite>

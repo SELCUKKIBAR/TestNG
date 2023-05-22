@@ -67,7 +67,8 @@ public class C08_testNG_sayfa_205 {
         // "Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)",
         // "Sweden (krona)","Singapore (dollar)","Thailand (baht)"
         List<WebElement> ddmListe = Driver.getDriver().findElements(By.xpath("//*[@id= 'pc_currency']"));
-        String newActualicerik = ddmListe.get(0).getText();
+        System.out.println(ddmListe.size());
+        String newActualicerik = ddmListe.toString();
         String  newExpedtedicerik ="Select One\n" +
                 "                                    Australia (dollar)\n" +
                 "                                    Canada (dollar)\n" +
@@ -84,6 +85,8 @@ public class C08_testNG_sayfa_205 {
                 "                                    Sweden (krona)\n" +
                 "                                    Singapore (dollar)\n" +
                 "                                    Thailand (baht)";
+
+
 
         System.out.println("newExpectedİçeril...: "+newExpedtedicerik);
         System.out.println("===================");

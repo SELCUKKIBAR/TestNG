@@ -1,0 +1,36 @@
+<!-- Bir clasin içinde tek bir test methodu  varsa o methodu çalıştırmak için
+     clası çalıştırmak yeterli olacaktir....
+
+     Method seçimi 1den fazla test methodu barindiran classlarda sipesifik olarak bazi methodlari çalıştırmak
+     veya sipesifik olarak belirlenen test methodlari dışında tüm methodlari çalıştırmak
+     için kullanilir....
+
+
+     Eğer bir xml dosyasi ile istediğimiz farkli package, class veya classdaki methodlari çalıiştirmak
+     istersek hiyerarşide uygun yerden yapıyı yeniden başlatabiliriz...-->
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="İstenen Methodlari Calistirma">
+    <test name="negatif testler">
+        <classes>
+            <class name="tests.Selcuk_Day_15_POM.C06_qd_negatifLogin_dinamik">
+                <methods>
+                    <!-- sadece verilen methodlari çalıştırır -->
+                    <include name="test01"></include>
+                    <include name="gecersizIsimSifreTesti"></include>
+                    <include name="gecerliIsimgecersizSifreTrsti"></include>
+                </methods>
+            </class>
+
+            <class name="tests.day14_TestNGFrameworkOlusturma.C01_Priority">
+                <methods>
+                    <!-- burda verilen methodlar hariç diğerlerini çalıştırır-->
+                    <exclude name="youtubeTesti"></exclude>
+                    <exclude name="amazonTesti"></exclude>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>
