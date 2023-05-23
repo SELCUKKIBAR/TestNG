@@ -5,6 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.Driver;
 
+import java.awt.*;
+import java.util.List;
+
 public class ZeroWebPages {
     public ZeroWebPages(){
         PageFactory.initElements(Driver.getDriver(),this);
@@ -50,6 +53,12 @@ public class ZeroWebPages {
 
     @FindBy (xpath = "//*[text()= 'Eurozone (euro)']") //Eurozone
     public WebElement euroSec;
+
+    @FindBy(xpath = "//span[@id='sp_sell_rate']")
+    public WebElement eurozoneGorunurlugu;
+
+    @FindBy(xpath = "//*[@id= 'pc_currency']") //8. “Currency” drop down menusu
+    public List<WebElement> currencyDropDownList;
 
 
 

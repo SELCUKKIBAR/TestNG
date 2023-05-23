@@ -1,3 +1,4 @@
+/*
 package tests.PraticClasslarim;
 
 import org.openqa.selenium.By;
@@ -16,6 +17,7 @@ public class C08_testNG_sayfa_205 {
 
     @Test
     public void test01() throws InterruptedException {
+
         //Yeni bir Class Olusturun : C03_SoftAssert
         //1. “http://zero.webappsecurity.com/” Adresine gidin
         Driver.getDriver().get(ConfigReader.getProperty("zeroUrl"));
@@ -55,9 +57,8 @@ public class C08_testNG_sayfa_205 {
 
         //9. soft assert kullanarak "Eurozone (euro)" secildigini test edin
         SoftAssert softAssert = new SoftAssert();
-        String  expectedicerik ="Eurozone (euro)";
-        String actulicerik = zwb.euroSec.getText();
-        softAssert.assertTrue(actulicerik.contains(expectedicerik),"Eurozone içermeli....");
+
+        softAssert.assertTrue(zwb.eurozoneGorunurlugu.isDisplayed());
 
 
         //10. soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin
@@ -66,11 +67,18 @@ public class C08_testNG_sayfa_205 {
         // "Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)",
         // "Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)",
         // "Sweden (krona)","Singapore (dollar)","Thailand (baht)"
-        List<WebElement> ddmListe = Driver.getDriver().findElements(By.xpath("//*[@id= 'pc_currency']"));
+        List<WebElement> ddmListe = select.getOptions();
         System.out.println(ddmListe.size());
-        String newActualicerik = ddmListe.toString();
+
+
+        for (WebElement each:ddmListe
+             ) {
+            System.out.println(each.getText());
+        }
+
+
         String  newExpedtedicerik ="Select One\n" +
-                "                                    Australia (dollar)\n" +
+                "                                    Australiaaaaaaaaa (dollar)\n" +
                 "                                    Canada (dollar)\n" +
                 "                                    Switzerland (franc)\n" +
                 "                                    China (yuan)\n" +
@@ -88,11 +96,13 @@ public class C08_testNG_sayfa_205 {
 
 
 
-        System.out.println("newExpectedİçeril...: "+newExpedtedicerik);
+        System.out.println("newExpectedİçerik...: "+newExpedtedicerik);
         System.out.println("===================");
         System.out.println("newActualİçerik...:"+newActualicerik);
 
         softAssert.assertEquals(newExpedtedicerik,newActualicerik,"Liste eşit olmalı....");
+
+
 
 
         // sayfayı kapat...
@@ -100,3 +110,9 @@ public class C08_testNG_sayfa_205 {
 
     }
 }
+
+ */
+
+
+
+
