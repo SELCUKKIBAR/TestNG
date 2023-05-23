@@ -1,0 +1,33 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+
+<!-- TestNg de paralel driverlar kullanarak
+ aynı anda birden fazla driverin calısmasını sağlayabilir.
+ Böylece toplam test süresini düsürebiliriz....
+
+ Daha önce kullandigimiz xml dosyalari kendilerine görev olrak
+ verilen testleri sırasi ile çalıştırıyorlardı.
+
+ Driverları paralel olarak çalıştırmak için suit satırına ilaveler yapacağız....
+
+therad count aynı anda çalışacak driver sayısını
+parallel : görev paylaşımın hangi levelda olacağını
+verbose: konsolda otomatik olarak yazilan kısa(1) veya uzun(10) olmasını kontrol eder..
+
+
+ -->
+<suite name="Istenen claslari calistirma" thread-count="2" parallel="classes" verbose="3">
+
+    <test name="smokeTest">
+
+        <classes>
+
+            <class name="tests.Selcuk_Day_15_POM.C05_qd_login_dinamik"></class>
+            <class name="tests.Selcuk_Day_15_POM.C06_qd_negatifLogin_dinamik"></class>
+            <class name="tests.Selcuk_Day_16_POM_Assertions.C03_Softassertion"></class>
+
+        </classes>
+
+    </test>
+
+</suite>

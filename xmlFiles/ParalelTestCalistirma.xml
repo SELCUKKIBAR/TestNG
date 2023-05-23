@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="planli pralel calistirma" thread-count="2" parallel="tests">
+
+    <test name="test1">
+        <classes>
+            <class name="tests.Selcuk_Day_15_POM.C05_qd_login_dinamik"></class>
+            <class name="tests.Selcuk_Day_15_POM.C06_qd_negatifLogin_dinamik"></class>
+        </classes>
+    </test>
+
+    <test name="test2">
+
+        <classes>
+            <class name="tests.Selcuk_Day_16_POM_Assertions.C03_Softassertion"></class>
+
+        </classes>
+    </test>
+
+</suite>
