@@ -1,4 +1,4 @@
-/*
+
 package tests.PraticClasslarim;
 
 import org.openqa.selenium.By;
@@ -10,6 +10,7 @@ import pages.ZeroWebPages;
 import utilities.ConfigReader;
 import utilities.Driver;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -58,7 +59,7 @@ public class C08_testNG_sayfa_205 {
         //9. soft assert kullanarak "Eurozone (euro)" secildigini test edin
         SoftAssert softAssert = new SoftAssert();
 
-        softAssert.assertTrue(zwb.eurozoneGorunurlugu.isDisplayed());
+        softAssert.assertTrue(zwb.eurozoneGorunurlugu.isSelected(),"Eurozone Seçilmeli...");
 
 
         //10. soft assert kullanarak DropDown listesinin su secenekleri oldugunu test edin
@@ -67,51 +68,53 @@ public class C08_testNG_sayfa_205 {
         // "Eurozone (euro)","Great Britain (pound)","Hong Kong (dollar)",
         // "Japan (yen)","Mexico (peso)","Norway (krone)","New Zealand (dollar)",
         // "Sweden (krona)","Singapore (dollar)","Thailand (baht)"
-        List<WebElement> ddmListe = select.getOptions();
-        System.out.println(ddmListe.size());
 
+        List<WebElement> ddmListe = select.getOptions();
+
+
+        List<String> expectedDRPDWNListe = new ArrayList<>();
+        expectedDRPDWNListe.add("Select One");
+        expectedDRPDWNListe.add("Australia (dollar)");
+        expectedDRPDWNListe.add("Canada (dollar)");
+        expectedDRPDWNListe.add("Switzerland (franc)");
+        expectedDRPDWNListe.add("China (yuan)");
+        expectedDRPDWNListe.add("Denmark (krone)");
+        expectedDRPDWNListe.add("Eurozone (euro)");
+        expectedDRPDWNListe.add("Great Britain (pound)");
+        expectedDRPDWNListe.add("Hong Kong (dollar)");
+        expectedDRPDWNListe.add("Japan (yen)");
+        expectedDRPDWNListe.add("Mexico (peso)");
+        expectedDRPDWNListe.add("Norway (krone)");
+        expectedDRPDWNListe.add("New Zealand (dollar)");
+        expectedDRPDWNListe.add("Sweden (krona)");
+        expectedDRPDWNListe.add("Singapore (dollar)");
+        expectedDRPDWNListe.add("Thailand (baht)");
+
+
+        List<String> actualDRPDWNListe = new ArrayList<>();
 
         for (WebElement each:ddmListe
              ) {
-            System.out.println(each.getText());
+            actualDRPDWNListe.add(each.getText());
         }
+        System.out.println(actualDRPDWNListe);
+        System.out.println("=============================");
+        System.out.println(expectedDRPDWNListe);
 
+        softAssert.assertEquals(actualDRPDWNListe,expectedDRPDWNListe);
 
-        String  newExpedtedicerik ="Select One\n" +
-                "                                    Australiaaaaaaaaa (dollar)\n" +
-                "                                    Canada (dollar)\n" +
-                "                                    Switzerland (franc)\n" +
-                "                                    China (yuan)\n" +
-                "                                    Denmark (krone)\n" +
-                "                                    Eurozone (euro)\n" +
-                "                                    Great Britain (pound)\n" +
-                "                                    Hong Kong (dollar)\n" +
-                "                                    Japan (yen)\n" +
-                "                                    Mexico (peso)\n" +
-                "                                    Norway (krone)\n" +
-                "                                    New Zealand (dollar)\n" +
-                "                                    Sweden (krona)\n" +
-                "                                    Singapore (dollar)\n" +
-                "                                    Thailand (baht)";
-
-
-
-        System.out.println("newExpectedİçerik...: "+newExpedtedicerik);
-        System.out.println("===================");
-        System.out.println("newActualİçerik...:"+newActualicerik);
-
-        softAssert.assertEquals(newExpedtedicerik,newActualicerik,"Liste eşit olmalı....");
+        softAssert.assertAll();
 
 
 
 
         // sayfayı kapat...
-        Driver.quitDriver();
+        Driver.closeDriver();
 
     }
 }
 
- */
+
 
 
 
