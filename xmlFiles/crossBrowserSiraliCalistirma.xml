@@ -1,0 +1,58 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+
+<!--
+Cross browser calistirdigimiz tetstlerin hepsini aynı browser ile
+calistirmak yerine uygun gördgümüz parcalara ayırıp her bir parcayı
+farklı browser ile calıstırmak demektir.
+
+xml dosyasından calıstırdıgımız testler sırası ile calısır her test
+Driver classından gelen driveri kullanır.
+Driver clasıda driver objesini olustururken hangi browser  ın kullanılacağı
+bilgisibi Configuration.properties dosyasından alır.
+
+
+Cros brwoser çok özel bir işlem olduğundan tüm classlar için değil
+belirlenmiş az sayıda clas için uygulanır....
+
+
+Cross browser ile test yapmak için değişklik
+calisan sistemde degisiklik yapmak zorundayiz.
+
+1- Başlangıç noktamız xml dosyası olduğu için
+   değişikliğe buradan başlıyoruz.....
+
+
+-->
+
+
+<suite name="Istenen claslari calistirma">
+
+    <test name="chrome Test">
+        <parameter name="browser" value="chrome"></parameter>
+
+        <classes>
+
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C01_amazonSearch"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C02_AlertTesti"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C03_BasicAuthentication"></class>
+
+        </classes>
+
+    </test>
+
+    <test name="firefox Test">
+        <parameter name="browser" value="firefox"></parameter>
+
+        <classes>
+
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C01_amazonSearch"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C02_AlertTesti"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C03_BasicAuthentication"></class>
+
+
+        </classes>
+
+    </test>
+
+</suite>
