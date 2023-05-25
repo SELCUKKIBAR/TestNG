@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBaseCross;
+import utilities.TestBaseRapor;
 
 public class C01_AmazonSearch extends TestBaseCross {
 
@@ -15,6 +16,7 @@ public class C01_AmazonSearch extends TestBaseCross {
         // amazon anasayfaya gidelim
 
         driver.get("https://www.amazon.com");
+
         // Nutella icin arama yapalim
 
         WebElement aramaKutusu= driver.findElement(By.id("twotabsearchtextbox"));

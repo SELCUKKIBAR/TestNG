@@ -33,8 +33,9 @@ calisan sistemde degisiklik yapmak zorundayiz.
 
         <classes>
 
-            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C01_amazonSearch"></class>
-            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C02_AlertTesti"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C01_AmazonSearch"></class>
+            <class name="tests.Selcuk_Day_19_pratic.C01_AmazonSearch"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C02_AlertsTesti"></class>
             <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C03_BasicAuthentication"></class>
 
         </classes>
@@ -46,13 +47,16 @@ calisan sistemde degisiklik yapmak zorundayiz.
 
         <classes>
 
-            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C01_amazonSearch"></class>
-            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C02_AlertTesti"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C01_AmazonSearch"></class>
+            <class name="tests.Selcuk_Day_19_pratic.C01_AmazonSearch"></class>
+            <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C02_AlertsTesti"></class>
             <class name="tests.Selcuk_Day_19_CrossBrowserTesting.C03_BasicAuthentication"></class>
 
 
         </classes>
 
     </test>
+
+
 
 </suite>
